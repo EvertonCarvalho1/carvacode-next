@@ -14,6 +14,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     project: '',
     budget: '',
     message: ''
@@ -51,6 +52,7 @@ const Contact: React.FC = () => {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         project: '',
         budget: '',
         message: ''
@@ -179,6 +181,21 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Telefone */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-white/70 mb-2">Telefone/WhatsApp *</label>
+                    <Input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="(11) 90000-0000"
+                      required
+                      style={{ background: 'transparent', borderColor: 'rgba(255,255,255,0.06)' }}
+                      className="text-white placeholder:text-white/50"
+                    />
+                  </div>
+
                   {/* Projeto */}
                   <div className="mb-4">
                     <label className="block text-sm font-medium text-white/70 mb-2">Tipo de projeto</label>
@@ -225,13 +242,15 @@ const Contact: React.FC = () => {
 
                   {/* Mensagem */}
                   <div className="mb-6 flex-1">
-                    <label className="block text-sm font-medium text-white/70 mb-2">Detalhes do projeto</label>
+                    <label className="block text-sm font-medium text-white/70 mb-2">Detalhes do projeto *</label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Conte mais sobre seu projeto, objetivos, prazos, funcionalidades desejadas..."
                       rows={6}
+                      required
+                      minLength={10}
                       style={{ background: 'transparent', borderColor: 'rgba(255,255,255,0.06)' }}
                       className="w-full h-full resize-none text-white placeholder:text-white/50"
                     />

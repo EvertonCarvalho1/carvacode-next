@@ -14,11 +14,11 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json();
-  const { name, email, project, budget, message } = body ?? {};
+  const { name, email, phone, project, budget, message } = body ?? {};
 
-  if (!name || !email) {
+  if (!name || !email || !phone || !message) {
     return NextResponse.json(
-      { error: 'Nome e email são obrigatórios.' },
+      { error: 'Nome, email, telefone e detalhes do projeto são obrigatórios.' },
       { status: 400 }
     );
   }
@@ -34,6 +34,7 @@ export async function POST(request: Request) {
       text: [
         `Nome: ${name}`,
         `Email: ${email}`,
+        `Telefone/WhatsApp: ${phone || 'não informado'}`,
         `Tipo de projeto: ${project || 'não informado'}`,
         `Orçamento: ${budget || 'não informado'}`,
         '',
