@@ -93,11 +93,11 @@ const Hero: React.FC = () => {
     const message = encodeURIComponent(
       'Olá! Gostaria de agendar uma consultoria gratuita para meu projeto.'
     );
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511959766136?text=${message}`, '_blank');
   };
 
-  const handlePortfolioClick = () => {
-    const element = document.querySelector('#portfolio');
+  const handleServicesClick = () => {
+    const element = document.querySelector('#services');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -213,10 +213,10 @@ const Hero: React.FC = () => {
               <Button
                 variant="glass"
                 size="xl"
-                onClick={handlePortfolioClick}
+                onClick={handleServicesClick}
                 className="group"
               >
-                Ver portfólio
+                Ver serviços
                 <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
               </Button>
             </motion.div>

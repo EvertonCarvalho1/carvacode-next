@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Mail, MessageCircle, Github, Linkedin } from 'lucide-react';
+import { Heart, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import logo from '../assets/logo.svg';  
+import logo from '../assets/logo.svg';
 import Image from 'next/image';
 
 const Footer: React.FC = () => {
@@ -12,20 +12,8 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     {
-      icon: Github,
-      href: '#',
-      label: 'GitHub',
-      color: 'hover:text-white'
-    },
-    {
-      icon: Linkedin,
-      href: '#',
-      label: 'LinkedIn',
-      color: 'hover:text-primary-blue'
-    },
-    {
       icon: Mail,
-      href: 'mailto:contato@carvacode.com',
+      href: 'mailto:carvacodebr@gmail.com',
       label: 'Email',
       color: 'hover:text-accent-coral'
     }
@@ -34,7 +22,6 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { label: 'Sobre', href: '#about' },
     { label: 'Serviços', href: '#services' },
-    { label: 'Portfólio', href: '#portfolio' },
     { label: 'Contato', href: '#contact' }
   ];
 
@@ -51,7 +38,7 @@ const Footer: React.FC = () => {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consultoria gratuita.');
-    window.open(`https://wa.me/5511951614457?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511959766136?text=${message}`, '_blank');
   };
 
   return (
@@ -155,11 +142,11 @@ const Footer: React.FC = () => {
               <div className="space-y-3">
                 <p className="text-white/70">
                   <span className="text-white font-medium">WhatsApp:</span><br />
-                  (11) 95161-4457
+                  (11) 95976-6136
                 </p>
                 <p className="text-white/70">
                   <span className="text-white font-medium">Email:</span><br />
-                  contato@carvacode.com
+                  carvacodebr@gmail.com
                 </p>
                 <p className="text-white/70">
                   <span className="text-white font-medium">Horário:</span><br />
@@ -202,7 +189,7 @@ const Footer: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`w-10 h-10 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center text-white/60 ${social.color} transition-all duration-300`}
                   aria-label={social.label}
-                >+
+                >
                   <social.icon className="w-5 h-5" />
                 </motion.button>
               ))}

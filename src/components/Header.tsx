@@ -23,8 +23,6 @@ const Header = () => {
   const navItems = [
     { href: '#about', label: 'Sobre' },
     { href: '#services', label: 'Serviços' },
-    { href: '#portfolio', label: 'Portfólio' },
-    { href: '#testimonials', label: 'Depoimentos' },
     { href: '#contact', label: 'Contato' },
   ];
 
@@ -79,7 +77,7 @@ const Header = () => {
               size="lg"
               onClick={() =>
                 window.open(
-                  'https://wa.me/5511951614457?text=Olá! Gostaria de agendar uma consultoria gratuita.',
+                  'https://wa.me/5511959766136?text=Olá! Gostaria de agendar uma consultoria gratuita.',
                   '_blank'
                 )
               }
@@ -91,6 +89,8 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMobileMenuOpen}
             className="md:hidden p-2 text-white hover:text-primary-blue transition-colors cursor-pointer"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -141,7 +141,7 @@ const Header = () => {
               size="xl"
               onClick={() => {
                 window.open(
-                  'https://wa.me/5511951614457?text=Olá! Gostaria de agendar uma consultoria gratuita.',
+                  'https://wa.me/5511959766136?text=Olá! Gostaria de agendar uma consultoria gratuita.',
                   '_blank'
                 );
                 setIsMobileMenuOpen(false);

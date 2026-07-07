@@ -2,16 +2,14 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Send, Phone, Mail, MessageCircle, CheckCircle } from 'lucide-react';
+import { Send, Phone, Mail, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
-import { useToast } from '../hooks/use-toast';
 
 const Contact: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-120px' });
-  const { toast } = useToast();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -22,6 +20,7 @@ const Contact: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -35,23 +34,32 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    await new Promise(resolve => setTimeout(resolve, 800));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-    toast({
-      title: 'Mensagem enviada!',
-      description: 'Obrigado pelo contato. Responderemos em breve!'
-    });
+      if (!response.ok) {
+        throw new Error('Falha ao enviar mensagem');
+      }
 
-    setFormData({
-      name: '',
-      email: '',
-      project: '',
-      budget: '',
-      message: ''
-    });
-
-    setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        project: '',
+        budget: '',
+        message: ''
+      });
+    } catch (err) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsAppClick = () => {
@@ -60,7 +68,7 @@ const Contact: React.FC = () => {
         formData.project || '[Descrição do projeto]'
       }. Orçamento estimado: ${formData.budget || '[Valor aproximado]'}`
     );
-    window.open(`https://wa.me/5511951614457?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511959766136?text=${message}`, '_blank');
   };
 
   return (
@@ -254,6 +262,19 @@ const Contact: React.FC = () => {
                         </>
                       )}
                     </Button>
+
+                    {submitStatus === 'success' && (
+                      <p className="mt-4 flex items-center gap-2 text-sm text-emerald-400">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                        Mensagem enviada! Responderemos em breve.
+                      </p>
+                    )}
+                    {submitStatus === 'error' && (
+                      <p className="mt-4 flex items-center gap-2 text-sm text-red-400">
+                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                        Não foi possível enviar. Tente novamente ou fale pelo WhatsApp.
+                      </p>
+                    )}
                   </div>
                 </form>
               </div>
@@ -305,7 +326,7 @@ const Contact: React.FC = () => {
                       <Phone className="w-5 h-5 text-primary-blue" />
                     </div>
                     <div>
-                      <p className="text-white font-medium">(11) 95161-4457</p>
+                      <p className="text-white font-medium">(11) 95976-6136</p>
                       <p className="text-white/60 text-sm">Ligação ou WhatsApp</p>
                     </div>
                   </div>
@@ -314,7 +335,7 @@ const Contact: React.FC = () => {
                       <Mail className="w-5 h-5 text-accent-coral" />
                     </div>
                     <div>
-                      <p className="text-white font-medium">contato@carvacode.com</p>
+                      <p className="text-white font-medium">carvacodebr@gmail.com</p>
                       <p className="text-white/60 text-sm">Resposta em até 24h</p>
                     </div>
                   </div>
