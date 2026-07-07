@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <span className="inline-block px-4 py-2 bg-primary-blue-10 border border-primary-blue rounded-full text-primary-blue text-sm font-medium mb-6">
-                🚀 Consultoria Especializada
+                Desenvolvimento web &amp; mobile
               </span>
             </motion.div>
 
@@ -57,13 +57,12 @@ const Hero: React.FC = () => {
               className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight"
             >
               <div className="leading-tight">
-                <span className="text-white">
-                  Consultoria em 
-                </span>
-                <br />
-                <span className="text-primary-blue">desenvolvimento web</span>
-                <span className="text-white">&nbsp;e&nbsp;</span>
+                <span className="text-white">Sites, </span>
+                <span className="text-primary-blue">sistemas</span>
+                <span className="text-white"> e </span>
                 <span className="text-accent-coral">apps</span>
+                <br />
+                <span className="text-white">sob medida</span>
               </div>
             </motion.h1>
 
@@ -72,9 +71,10 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-xl text-white/80 leading-relaxed max-w-2xl"
+              className="text-xl text-white/80 leading-relaxed max-w-2xl mx-auto"
             >
-              Transformamos ideias em produtos digitais escaláveis
+              Do frontend ao deploy: interfaces modernas, APIs bem estruturadas
+              e sistemas prontos para crescer.
             </motion.p>
 
             {/* Feature list */}
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
                   className="w-2 h-2 rounded-full animate-pulse"
                   style={{ backgroundColor: 'var(--color-primary-blue)' }}
                 />
-                <span>Experiência técnica</span>
+                <span>Frontend &amp; Backend</span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -97,12 +97,12 @@ const Hero: React.FC = () => {
                   className="w-2 h-2 rounded-full animate-pulse"
                   style={{ backgroundColor: 'var(--color-accent-coral)' }}
                 />
-                <span>Entregas ágeis</span>
+                <span>Web &amp; Mobile</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-warm-orange rounded-full animate-pulse" />
-                <span>Integração mobile/web</span>
+                <span>Deploy &amp; Manutenção</span>
               </div>
             </motion.div>
 
@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
                 className="group"
               >
                 <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Agendar consultoria grátis
+                Iniciar um projeto
               </Button>
 
               <Button
@@ -138,10 +138,9 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="text-sm text-white/60 italic pt-6"
+              className="text-sm text-white/50 pt-6"
             >
-              Tecnologia que potencializa seu produto — animações interativas e
-              desempenho otimizado
+              React · Next.js · Node.js · React Native · PostgreSQL · Docker
             </motion.p>
           </motion.div>
         </div>

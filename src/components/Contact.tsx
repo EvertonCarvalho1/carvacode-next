@@ -109,12 +109,11 @@ const Contact: React.FC = () => {
               transition={{ delay: 0.16, duration: 0.5 }}
               className="text-3xl md:text-4xl font-extrabold mb-6 text-white leading-tight"
             >
-              <span>Pronto para </span>
-              <span className="text-gradient-primary">transformar</span>
+              <span>Vamos </span>
+              <span className="text-gradient-primary">conversar</span>
               <br />
-              <span>sua </span>
-              <span className="text-gradient-accent">ideia</span>
-              <span> em realidade?</span>
+              <span>sobre seu </span>
+              <span className="text-gradient-accent">projeto</span>
             </motion.h2>
 
             <motion.p
@@ -123,8 +122,8 @@ const Contact: React.FC = () => {
               transition={{ delay: 0.24, duration: 0.45 }}
               className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed"
             >
-              Agende uma consultoria gratuita ou preencha o formulário abaixo.
-              Vamos descobrir juntos como podemos ajudar seu projeto a decolar.
+              Preencha o formulário ou chame no WhatsApp. Respondemos rápido,
+              com uma ideia dos próximos passos e sem compromisso.
             </motion.p>
           </div>
 
@@ -321,7 +320,7 @@ const Contact: React.FC = () => {
                   Prefere conversar agora?
                 </h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Agende uma consultoria gratuita via WhatsApp. Resposta rápida e atendimento personalizado.
+                  Fale direto com quem desenvolve. Resposta rápida e atendimento pessoal, sem robô.
                 </p>
                 <Button onClick={handleWhatsAppClick} variant="coral" size="xl" className="w-full mt-auto">
                   Chamar no WhatsApp
@@ -374,10 +373,10 @@ const Contact: React.FC = () => {
                 <h3 className="text-xl font-bold text-white mb-6">Por que escolher a CarvaCode?</h3>
                 <div className="space-y-4">
                   {[
-                    'Consultoria inicial gratuita',
-                    'Orçamento transparente sem surpresas',
-                    'Acompanhamento durante todo o projeto',
-                    'Suporte pós-entrega incluso'
+                    'Primeira conversa sem compromisso',
+                    'Orçamento transparente, sem surpresas',
+                    'Contato direto com quem desenvolve',
+                    'Manutenção e evolução após a entrega'
                   ].map((benefit, index) => (
                     <motion.div
                       key={benefit}

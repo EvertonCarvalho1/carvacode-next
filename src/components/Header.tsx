@@ -23,6 +23,7 @@ const Header = () => {
   const navItems = [
     { href: '#about', label: 'Sobre' },
     { href: '#services', label: 'Serviços' },
+    { href: '#tecnologias', label: 'Tecnologias' },
     { href: '#contact', label: 'Contato' },
   ];
 
@@ -82,7 +83,7 @@ const Header = () => {
                 )
               }
             >
-              Agendar Consultoria
+              Falar com a equipe
             </Button>
           </div>
 
@@ -147,7 +148,7 @@ const Header = () => {
                 setIsMobileMenuOpen(false);
               }}
             >
-              Agendar Consultoria Grátis
+              Falar com a equipe
             </Button>
           </motion.div>
         </div>

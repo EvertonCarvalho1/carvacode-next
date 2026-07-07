@@ -4,13 +4,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-  Globe, 
-  Smartphone, 
-  Database, 
-  Zap, 
-  Search,
-  ArrowRight 
+import {
+  Globe,
+  LayoutDashboard,
+  Smartphone,
+  Server,
+  Database,
+  Rocket,
+  ArrowRight
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
@@ -21,37 +22,44 @@ const Services = () => {
   const services = [
     {
       icon: Globe,
-      title: 'Desenvolvimento Web',
-      description: 'Aplicações web modernas com Next.js, React e tecnologias headless CMS para máxima performance e escalabilidade.',
-      features: ['Next.js & React', 'Headless CMS', 'PWA', 'SSR/SSG'],
+      title: 'Sites e landing pages',
+      description: 'Sites institucionais e páginas de conversão rápidos, responsivos e prontos para o Google.',
+      features: ['Next.js', 'React', 'Tailwind', 'SEO'],
       color: 'from-primary-blue to-primary-blue-glow',
     },
     {
-      icon: Smartphone,
-      title: 'Apps Mobile',
-      description: 'Aplicativos nativos e híbridos que oferecem experiência excepcional em iOS e Android.',
-      features: ['React Native', 'Flutter', 'Apps Nativas', 'Cross-platform'],
-      color: 'from-accent-coral to-warm-orange',
-    },
-    {
-      icon: Database,
-      title: 'APIs & Integrações',
-      description: 'Desenvolvimento de APIs robustas e integrações com sistemas terceiros para conectar todos os pontos do seu ecossistema.',
-      features: ['REST APIs', 'GraphQL', 'Microserviços', 'Integrações'],
-      color: 'from-warm-orange to-accent-coral',
-    },
-    {
-      icon: Zap,
-      title: 'Performance & Otimização',
-      description: 'Análise e otimização de performance para garantir velocidade e eficiência em todos os dispositivos.',
-      features: ['Core Web Vitals', 'Bundle Optimization', 'CDN Setup', 'Monitoring'],
+      icon: LayoutDashboard,
+      title: 'Sistemas web personalizados',
+      description: 'Painéis administrativos e sistemas sob medida para o fluxo de trabalho do seu negócio.',
+      features: ['Dashboards', 'Autenticação', 'Relatórios', 'Multiusuário'],
       color: 'from-primary-blue-glow to-primary-blue',
     },
     {
-      icon: Search,
-      title: 'SEO & Analytics',
-      description: 'Implementação de SEO técnico e analytics para maximizar a visibilidade e conversão do seu produto.',
-      features: ['SEO Técnico', 'Analytics', 'Meta Tags', 'Structured Data'],
+      icon: Smartphone,
+      title: 'Aplicações mobile',
+      description: 'Apps para Android e iOS com uma base de código, integrados ao seu backend.',
+      features: ['React Native', 'iOS & Android', 'App responsivo'],
+      color: 'from-accent-coral to-warm-orange',
+    },
+    {
+      icon: Server,
+      title: 'APIs e backend',
+      description: 'APIs REST bem estruturadas, autenticação e regras de negócio pensadas para uso real.',
+      features: ['Node.js', 'REST APIs', 'Autenticação', 'TypeScript'],
+      color: 'from-warm-orange to-accent-coral',
+    },
+    {
+      icon: Database,
+      title: 'Banco de dados e integrações',
+      description: 'Modelagem de banco relacional e integração com serviços externos que seu projeto usa.',
+      features: ['PostgreSQL', 'Prisma', 'Integrações', 'Webhooks'],
+      color: 'from-primary-blue to-accent-coral',
+    },
+    {
+      icon: Rocket,
+      title: 'Deploy, manutenção e evolução',
+      description: 'Publicamos em VPS/nuvem, monitoramos e evoluímos o projeto ao longo do tempo.',
+      features: ['Docker', 'Linux/VPS', 'CI/CD', 'Manutenção'],
       color: 'from-accent-coral to-primary-blue',
     },
   ];
@@ -134,10 +142,14 @@ const Services = () => {
                   </div>
 
                   {/* Learn More Link */}
-                  <div className="flex items-center text-primary-blue group-hover:text-accent-coral transition-colors duration-300 font-medium">
-                    <span className="text-sm">Saiba mais</span>
+                  <button
+                    type="button"
+                    onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="flex items-center text-primary-blue group-hover:text-accent-coral transition-colors duration-300 font-medium cursor-pointer"
+                  >
+                    <span className="text-sm">Falar sobre isso</span>
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                  </div>
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -152,14 +164,14 @@ const Services = () => {
           >
             <div className="glass-card p-8 md:p-12 rounded-2xl max-w-4xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                <span className="text-foreground">Pronto para transformar </span>
-                <span className="text-gradient-accent">sua ideia</span>
-                <span className="text-foreground"> em realidade?</span>
+                <span className="text-foreground">Tem um </span>
+                <span className="text-gradient-accent">projeto em mente</span>
+                <span className="text-foreground">?</span>
               </h3>
-              
+
               <p className="text-muted-foreground mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
-                Vamos conversar sobre seu projeto e descobrir como podemos ajudar 
-                você a alcançar seus objetivos digitais.
+                Conte pra gente o que você precisa construir. Respondemos rápido,
+                sem compromisso e já com uma ideia dos próximos passos.
               </p>
               
               <Button

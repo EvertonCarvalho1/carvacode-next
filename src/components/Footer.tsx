@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { label: 'Sobre', href: '#about' },
     { label: 'Serviços', href: '#services' },
+    { label: 'Tecnologias', href: '#tecnologias' },
     { label: 'Contato', href: '#contact' }
   ];
 

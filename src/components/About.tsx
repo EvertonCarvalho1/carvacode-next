@@ -12,20 +12,20 @@ const About = () => {
 
   const differentials = [
     {
-      title: 'Experiência Técnica Sólida',
-      description: 'Mais de 8 anos desenvolvendo soluções web e mobile com as tecnologias mais modernas do mercado.',
+      title: 'Desenvolvimento ponta a ponta',
+      description: 'Cuidamos de tudo: interface, API, banco de dados e deploy. Você não precisa juntar vários fornecedores.',
     },
     {
-      title: 'Entregas Ágeis',
-      description: 'Metodologia ágil garantindo entregas rápidas sem comprometer a qualidade do seu projeto.',
+      title: 'Comunicação próxima',
+      description: 'Equipe enxuta e contato direto com quem escreve o código. Sem camadas de intermediários.',
     },
     {
-      title: 'Integração Mobile/Web',
-      description: 'Especialistas em criar ecossistemas digitais completos que funcionam perfeitamente em todas as plataformas.',
+      title: 'Código organizado',
+      description: 'Projetos estruturados para durar, pensados para manutenção e evolução ao longo do tempo.',
     },
     {
-      title: 'Suporte Completo',
-      description: 'Acompanhamento desde a concepção até o deploy e manutenção contínua do seu produto.',
+      title: 'Soluções sob medida',
+      description: 'Nada de template genérico. Construímos o que o seu projeto realmente precisa.',
     },
   ];
 
@@ -55,11 +55,11 @@ const About = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
-              <span className="text-foreground">Transformamos </span>
-              <span className="bg-gradient-to-r from-primary-blue to-primary-blue-glow bg-clip-text text-transparent">ideias complexas</span>
+              <span className="text-foreground">Uma equipe </span>
+              <span className="bg-gradient-to-r from-primary-blue to-primary-blue-glow bg-clip-text text-transparent">técnica e enxuta</span>
               <br />
-              <span className="text-foreground">em </span>
-              <span className="bg-gradient-to-r from-accent-coral to-warm-orange bg-clip-text text-transparent">soluções digitais</span>
+              <span className="text-foreground">que constrói </span>
+              <span className="bg-gradient-to-r from-accent-coral to-warm-orange bg-clip-text text-transparent">de ponta a ponta</span>
             </motion.h2>
             
             <motion.p
@@ -68,9 +68,10 @@ const About = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              Somos uma consultoria especializada em desenvolvimento web e aplicativos móveis, 
-              focada em criar produtos digitais que realmente impactam os resultados do seu negócio. 
-              Nossa abordagem combina experiência técnica com visão estratégica.
+              A CarvaCode nasce da experiência prática de desenvolvedores que trabalham
+              diariamente com sistemas reais — aplicações web, mobile, APIs e infraestrutura.
+              Somos uma equipe enxuta, próxima do cliente e focada em entregar soluções bem
+              construídas, bonitas e funcionais.
             </motion.p>
           </div>
 
