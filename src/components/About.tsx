@@ -4,18 +4,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { CheckCircle, Clock, Trophy, Users } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const stats = [
-    { icon: Trophy, label: 'Projetos Entregues', value: '50+' },
-    { icon: Users, label: 'Clientes Satisfeitos', value: '30+' },
-    { icon: Clock, label: 'Anos de Experiência', value: '8+' },
-    { icon: CheckCircle, label: 'Taxa de Sucesso', value: '98%' },
-  ];
 
   const differentials = [
     {
@@ -80,34 +73,6 @@ const About = () => {
               Nossa abordagem combina experiência técnica com visão estratégica.
             </motion.p>
           </div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
-                className="text-center group"
-              >
-                <div className="w-16 h-16 bg-primary-blue rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-gradient-primary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
 
           {/* Differentials */}
           <div className="grid lg:grid-cols-2 gap-8">

@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
   try {
     const { error } = await resend.emails.send({
-      from: 'CarvaCode Site <onboarding@resend.dev>',
+      from: 'CarvaCode Site <contato@carvacodeweb.com>',
       to: CONTACT_EMAIL,
       replyTo: email,
       subject: `Novo contato do site: ${name}`,

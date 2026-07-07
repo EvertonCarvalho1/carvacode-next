@@ -187,18 +187,18 @@ const Contact: React.FC = () => {
                       value={formData.project}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 rounded-md text-white"
-                      style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.06)' }}
+                      style={{ backgroundColor: '#0f151a', border: '1px solid rgba(255,255,255,0.06)' }}
                     >
-                      <option value="" disabled>
+                      <option value="" disabled style={{ backgroundColor: '#0f151a', color: 'white' }}>
                         Selecione o tipo de projeto
                       </option>
-                      <option value="website">Website/Landing Page</option>
-                      <option value="ecommerce">E-commerce</option>
-                      <option value="webapp">Aplicação Web</option>
-                      <option value="mobile">App Mobile</option>
-                      <option value="api">API/Backend</option>
-                      <option value="consultoria">Consultoria</option>
-                      <option value="outro">Outro</option>
+                      <option value="website" style={{ backgroundColor: '#0f151a', color: 'white' }}>Website/Landing Page</option>
+                      <option value="ecommerce" style={{ backgroundColor: '#0f151a', color: 'white' }}>E-commerce</option>
+                      <option value="webapp" style={{ backgroundColor: '#0f151a', color: 'white' }}>Aplicação Web</option>
+                      <option value="mobile" style={{ backgroundColor: '#0f151a', color: 'white' }}>App Mobile</option>
+                      <option value="api" style={{ backgroundColor: '#0f151a', color: 'white' }}>API/Backend</option>
+                      <option value="consultoria" style={{ backgroundColor: '#0f151a', color: 'white' }}>Consultoria</option>
+                      <option value="outro" style={{ backgroundColor: '#0f151a', color: 'white' }}>Outro</option>
                     </select>
                   </div>
 
@@ -210,16 +210,16 @@ const Contact: React.FC = () => {
                       value={formData.budget}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 rounded-md text-white"
-                      style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.06)' }}
+                      style={{ backgroundColor: '#0f151a', border: '1px solid rgba(255,255,255,0.06)' }}
                     >
-                      <option value="" disabled>
+                      <option value="" disabled style={{ backgroundColor: '#0f151a', color: 'white' }}>
                         Selecione a faixa de orçamento
                       </option>
-                      <option value="5k-15k">R$ 5.000 - R$ 15.000</option>
-                      <option value="15k-30k">R$ 15.000 - R$ 30.000</option>
-                      <option value="30k-50k">R$ 30.000 - R$ 50.000</option>
-                      <option value="50k+">R$ 50.000+</option>
-                      <option value="nao-definido">Ainda não definido</option>
+                      <option value="5k-15k" style={{ backgroundColor: '#0f151a', color: 'white' }}>R$ 5.000 - R$ 15.000</option>
+                      <option value="15k-30k" style={{ backgroundColor: '#0f151a', color: 'white' }}>R$ 15.000 - R$ 30.000</option>
+                      <option value="30k-50k" style={{ backgroundColor: '#0f151a', color: 'white' }}>R$ 30.000 - R$ 50.000</option>
+                      <option value="50k+" style={{ backgroundColor: '#0f151a', color: 'white' }}>R$ 50.000+</option>
+                      <option value="nao-definido" style={{ backgroundColor: '#0f151a', color: 'white' }}>Ainda não definido</option>
                     </select>
                   </div>
 
