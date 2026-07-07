@@ -1,93 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Play } from 'lucide-react';
 
-// Carrega o wrapper (ThreeDemo.tsx) dinamicamente — SSR desativado
-const ThreeDemo = dynamic(() => import('./ThreeDemo'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      {/* placeholder com token azul */}
-      <div className="animate-pulse w-40 h-40 rounded-full bg-primary-blue-10" />
-    </div>
-  ),
-});
-
-// Hook simples para detectar WebGL
-function isWebGLAvailable(): boolean {
-  try {
-    if (typeof window === 'undefined') return false;
-    const canvas = document.createElement('canvas');
-    return !!(
-      (window as any).WebGLRenderingContext &&
-      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
-    );
-  } catch {
-    return false;
-  }
-}
-
-// Hook para IntersectionObserver (lazy load)
-function useOnScreen<T extends Element>(options?: IntersectionObserverInit) {
-  const ref = useRef<T | null>(null);
-  const [isIntersecting, setIntersecting] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIntersecting(true);
-        observer.disconnect();
-      }
-    }, options);
-
-    observer.observe(el);
-    return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [options]);
-
-  return { ref, isIntersecting };
-}
-
 const Hero: React.FC = () => {
-  const [showTooltip, setShowTooltip] = useState(true);
-  const [enable3D, setEnable3D] = useState(false);
-  const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
-
-  // detecta prefer-reduced-motion
-  const prefersReducedMotion =
-    typeof window !== 'undefined' && window.matchMedia
-      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      : false;
-
-  // Intersection hook para o container 3D
-  const { ref: threeRef, isIntersecting } = useOnScreen<HTMLDivElement>({
-    root: null,
-    rootMargin: '200px',
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWebglSupported(isWebGLAvailable());
-    }
-
-    const timer = setTimeout(() => setShowTooltip(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (isIntersecting && webglSupported) {
-      setEnable3D(true);
-    }
-  }, [isIntersecting, webglSupported]);
-
   // Handlers
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
@@ -106,24 +24,19 @@ const Hero: React.FC = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const chooseQuality = () => {
-    if (typeof window === 'undefined') return 'low';
-    return window.innerWidth < 768 ? 'low' : 'high';
-  };
-
   return (
     <section className="relative min-h-screen hero-gradient overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen py-20">
-          {/* Left content */}
+        <div className="flex items-center min-h-screen py-20">
+          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="space-y-8 lg:pr-8"
+            className="space-y-8 max-w-2xl mx-auto text-center"
           >
             {/* Tagline */}
             <motion.div
@@ -169,7 +82,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-wrap gap-4 text-white/70"
+              className="flex flex-wrap justify-center gap-4 text-white/70"
             >
               <div className="flex items-center gap-2">
                 <div
@@ -198,7 +111,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row justify-center gap-4 pt-4"
             >
               <Button
                 variant="cta"
@@ -230,60 +143,6 @@ const Hero: React.FC = () => {
               Tecnologia que potencializa seu produto — animações interativas e
               desempenho otimizado
             </motion.p>
-          </motion.div>
-
-          {/* Right content: 3D demo area (responsiva) */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative w-full flex items-center justify-center"
-          >
-            {/* Limitador de largura: vai diminuir conforme a tela */}
-            <div className="w-full max-w-md sm:max-w-lg lg:max-w-none">
-              {/* Box com aspect ratio (75% => 4:3). Ajuste paddingTop para outro ratio se quiser */}
-              <div ref={threeRef} className="relative w-full" style={{ paddingTop: '75%' }}>
-                {/* glow azul atrás da bola */}
-                <div className="absolute -inset-6 z-0 rounded-full blur-3xl bg-primary-blue-20" />
-
-                {/* conteúdo absoluto que preenche o box (em cima do glow) */}
-                <div className="absolute inset-0 z-10 rounded-xl overflow-hidden flex items-center justify-center">
-                  {webglSupported === false && (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-white/70 text-center px-4">
-                        <p className="mb-2 font-semibold">Visualização 3D indisponível</p>
-                        <p className="text-sm">Seu dispositivo ou navegador não suporta WebGL.</p>
-                      </div>
-                    </div>
-                  )}
-
-                  {!enable3D && (
-                    <div className="w-full h-full rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-black/20 to-transparent">
-                      <div className="max-w-xs text-center text-white/60">
-                        <div className="h-48 w-48 mx-auto mb-4 rounded-full bg-primary-blue-10 animate-pulse" />
-                        <p className="mb-3 font-medium">Animação interativa</p>
-
-                        {webglSupported && (
-                          <button
-                            onClick={() => setEnable3D(true)}
-                            className="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/8 text-white text-sm"
-                          >
-                            Ativar visualização 3D
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-                  {enable3D && webglSupported && (
-                    /* ThreeDemo deve preencher o box e escalar automaticamente */
-                    <div className="w-full h-full">
-                      <ThreeDemo className="w-full h-full" />
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
 

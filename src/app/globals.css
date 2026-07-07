@@ -4,6 +4,8 @@
    0) Variáveis globais + Aliases
    ------------------------- */
 :root {
+  color-scheme: light dark;
+
   /* Brand Colors */
   --color-primary-blue: #00a8e8;        /* hsl(196 81% 51%) */
   --color-primary-blue-glow: #33baf0;   /* hsl(196 81% 61%) */

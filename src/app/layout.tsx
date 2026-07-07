@@ -1,6 +1,6 @@
 import './globals.css';
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const siteUrl = "https://www.carvacodeweb.com";
 const title = "CarvaCode - Consultoria em Desenvolvimento Web & Apps";
@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     title,
     description,
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: "#0c1216",
 };
 
 export default function RootLayout({
