@@ -1,6 +1,20 @@
 import './globals.css';
 
 import type { Metadata, Viewport } from "next";
+import { Inter, Sora } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
+});
 
 const siteUrl = "https://www.carvacodeweb.com";
 const title = "CarvaCode - Consultoria em Desenvolvimento Web & Apps";
@@ -40,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${inter.variable} ${sora.variable}`}>
       <body>{children}</body>
     </html>
   );
