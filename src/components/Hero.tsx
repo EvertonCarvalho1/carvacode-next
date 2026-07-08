@@ -61,8 +61,9 @@ const Hero: React.FC = () => {
                 <span className="text-primary-blue">sistemas</span>
                 <span className="text-white"> e </span>
                 <span className="text-accent-coral">apps</span>
+                {' '}
                 <br className="hidden md:block" />
-                <span className="text-white"> sob medida</span>
+                <span className="text-white">sob medida</span>
               </div>
             </motion.h1>
 

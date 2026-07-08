@@ -111,8 +111,9 @@ const Contact: React.FC = () => {
             >
               <span>Vamos </span>
               <span className="text-gradient-primary">conversar</span>
+              {' '}
               <br className="hidden md:block" />
-              <span> sobre seu </span>
+              <span>sobre seu </span>
               <span className="text-gradient-accent">projeto</span>
             </motion.h2>
 
