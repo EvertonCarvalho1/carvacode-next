@@ -26,8 +26,27 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen hero-gradient overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      {/* Background layers */}
+      <div
+        aria-hidden
+        className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.026)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.026)_1px,transparent_1px)] bg-[size:36px_36px]"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_42%,rgba(0,168,232,0.13),transparent_34%),radial-gradient(circle_at_18%_28%,rgba(0,168,232,0.12),transparent_28%),radial-gradient(circle_at_82%_72%,rgba(255,105,77,0.11),transparent_30%)]"
+      />
+      <div
+        aria-hidden
+        className="absolute left-1/2 top-1/2 z-0 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-blue/8 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute -right-28 bottom-12 z-0 h-80 w-80 rounded-full bg-accent-coral/8 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 z-0 h-32 bg-gradient-to-t from-bg-deep-start/70 to-transparent"
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center min-h-screen py-20">
