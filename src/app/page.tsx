@@ -9,7 +9,7 @@ import BackToTop from "../components/BackToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         <Hero />

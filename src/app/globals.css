@@ -109,13 +109,16 @@
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-width: 360px; /* Garante que o body também não fique menor */
-    overflow-x: auto; /* Permite scroll horizontal se necessário */
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   html {
     scroll-behavior: smooth;
-    min-width: 360px; /* Limita a largura mínima da página */
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   /* Títulos usam a fonte display (Sora) */

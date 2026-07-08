@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen hero-gradient overflow-hidden">
+    <section className="relative min-h-screen w-full max-w-full hero-gradient overflow-hidden">
       {/* Background layers */}
       <div
         aria-hidden
