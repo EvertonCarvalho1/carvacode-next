@@ -95,8 +95,8 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
-                Transformamos ideias em produtos digitais escaláveis.
-                Consultoria especializada em desenvolvimento web e apps.
+                Equipe técnica enxuta que desenvolve sites, sistemas e apps sob
+                medida — do frontend ao deploy.
               </p>
 
               <Button
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
                 className="group cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Falemos — agende uma consultoria
+                Falar com a equipe
               </Button>
             </motion.div>
 

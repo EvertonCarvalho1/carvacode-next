@@ -1,33 +1,36 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { CheckCircle } from 'lucide-react';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { CheckCircle } from 'lucide-react'
 
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
 
   const differentials = [
     {
       title: 'Desenvolvimento ponta a ponta',
-      description: 'Cuidamos de tudo: interface, API, banco de dados e deploy. Você não precisa juntar vários fornecedores.',
+      description:
+        'Cuidamos de tudo: interface, API, banco de dados e deploy. Você não precisa juntar vários fornecedores.',
     },
     {
       title: 'Comunicação próxima',
-      description: 'Equipe enxuta e contato direto com quem escreve o código. Sem camadas de intermediários.',
+      description:
+        'Equipe enxuta e contato direto com quem escreve o código. Sem camadas de intermediários.',
     },
     {
       title: 'Código organizado',
-      description: 'Projetos estruturados para durar, pensados para manutenção e evolução ao longo do tempo.',
+      description:
+        'Projetos estruturados para durar, pensados para manutenção e evolução ao longo do tempo.',
     },
     {
       title: 'Soluções sob medida',
       description: 'Nada de template genérico. Construímos o que o seu projeto realmente precisa.',
     },
-  ];
+  ]
 
   return (
     <section id="about" className="py-24 bg-background relative">
@@ -48,7 +51,7 @@ const About = () => {
             >
               Sobre a CarvaCode
             </motion.span>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -56,22 +59,26 @@ const About = () => {
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               <span className="text-foreground">Uma equipe </span>
-              <span className="bg-gradient-to-r from-primary-blue to-primary-blue-glow bg-clip-text text-transparent">técnica e enxuta</span>
+              <span className="bg-gradient-to-r from-primary-blue to-primary-blue-glow bg-clip-text text-transparent">
+                técnica e enxuta
+              </span>
               <br />
               <span className="text-foreground">que constrói </span>
-              <span className="bg-gradient-to-r from-accent-coral to-warm-orange bg-clip-text text-transparent">de ponta a ponta</span>
+              <span className="bg-gradient-to-r from-accent-coral to-warm-orange bg-clip-text text-transparent">
+                de ponta a ponta
+              </span>
             </motion.h2>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              A CarvaCode nasce da experiência prática de desenvolvedores que trabalham
-              diariamente com sistemas reais — aplicações web, mobile, APIs e infraestrutura.
-              Somos uma equipe enxuta, próxima do cliente e focada em entregar soluções bem
-              construídas, bonitas e funcionais.
+              A CarvaCode nasce da experiência prática de desenvolvedores que trabalham diariamente
+              com sistemas reais, aplicações web, mobile, APIs e infraestrutura. Somos uma equipe
+              enxuta, próxima do cliente e focada em entregar soluções bem construídas, bonitas e
+              funcionais.
             </motion.p>
           </div>
 
@@ -81,7 +88,9 @@ const About = () => {
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                animate={
+                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }
+                }
                 transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
                 className="glass-card p-8 rounded-2xl hover:shadow-card transition-all duration-300 group"
               >
@@ -90,12 +99,8 @@ const About = () => {
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3 text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
+                    <h3 className="text-xl font-bold mb-3 text-foreground">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -104,7 +109,7 @@ const About = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
