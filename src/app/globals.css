@@ -132,7 +132,6 @@
 
   .hero-gradient {
     background: var(--gradient-hero);
-    background-attachment: fixed;
   }
 
   .bg-grid-pattern {

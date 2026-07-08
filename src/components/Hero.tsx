@@ -29,11 +29,11 @@ const Hero: React.FC = () => {
       {/* Background layers */}
       <div
         aria-hidden
-        className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.026)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.026)_1px,transparent_1px)] bg-[size:36px_36px]"
+        className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.014)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.014)_1px,transparent_1px)] bg-[size:48px_48px]"
       />
       <div
         aria-hidden
-        className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_42%,rgba(0,168,232,0.13),transparent_34%),radial-gradient(circle_at_18%_28%,rgba(0,168,232,0.12),transparent_28%),radial-gradient(circle_at_82%_72%,rgba(255,105,77,0.11),transparent_30%)]"
+        className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_42%,rgba(0,168,232,0.09),transparent_36%),radial-gradient(circle_at_18%_28%,rgba(0,168,232,0.08),transparent_30%),radial-gradient(circle_at_82%_72%,rgba(255,105,77,0.075),transparent_32%)]"
       />
       <div
         aria-hidden
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
             >
               <div className="flex items-center gap-2">
                 <div
-                  className="w-2 h-2 rounded-full animate-pulse"
+                  className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: 'var(--color-primary-blue)' }}
                 />
                 <span>Frontend &amp; Backend</span>
@@ -114,14 +114,14 @@ const Hero: React.FC = () => {
 
               <div className="flex items-center gap-2">
                 <div
-                  className="w-2 h-2 rounded-full animate-pulse"
+                  className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: 'var(--color-accent-coral)' }}
                 />
                 <span>Web &amp; Mobile</span>
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-warm-orange rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-warm-orange rounded-full" />
                 <span>Deploy &amp; Manutenção</span>
               </div>
             </motion.div>
