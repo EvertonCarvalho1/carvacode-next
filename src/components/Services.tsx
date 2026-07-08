@@ -95,8 +95,8 @@ const Services = () => {
             >
               <span className="text-foreground">Soluções </span>
               <span className="text-gradient-primary">completas</span>
-              <br />
-              <span className="text-foreground">para seu </span>
+              <br className="hidden md:block" />
+              <span className="text-foreground"> para seu </span>
               <span className="text-gradient-accent">produto digital</span>
             </motion.h2>
           </div>

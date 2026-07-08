@@ -62,7 +62,7 @@ const About = () => {
               <span className="bg-gradient-to-r from-primary-blue to-primary-blue-glow bg-clip-text text-transparent">
                 técnica e enxuta
               </span>
-              <br />
+              <br className="hidden md:block" />
               <span className="text-foreground">que constrói </span>
               <span className="bg-gradient-to-r from-accent-coral to-warm-orange bg-clip-text text-transparent">
                 de ponta a ponta

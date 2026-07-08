@@ -1,46 +1,46 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, Mail, MessageCircle } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import logo from '../assets/logo.svg';
-import Image from 'next/image';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Heart, Mail, MessageCircle } from 'lucide-react'
+import { Button } from '../components/ui/button'
+import logo from '../assets/logo.svg'
+import Image from 'next/image'
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   const socialLinks = [
     {
       icon: Mail,
       href: 'mailto:carvacodebr@gmail.com',
       label: 'Email',
-      color: 'hover:text-accent-coral'
-    }
-  ];
+      color: 'hover:text-accent-coral',
+    },
+  ]
 
   const quickLinks = [
     { label: 'Sobre', href: '#about' },
     { label: 'Serviços', href: '#services' },
     { label: 'Tecnologias', href: '#tecnologias' },
-    { label: 'Contato', href: '#contact' }
-  ];
+    { label: 'Contato', href: '#contact' },
+  ]
 
   const handleLinkClick = (href: string) => {
     if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      const element = document.querySelector(href)
+      element?.scrollIntoView({ behavior: 'smooth' })
     } else if (href.startsWith('mailto:')) {
-      window.location.href = href;
+      window.location.href = href
     } else {
-      window.open(href, '_blank');
+      window.open(href, '_blank')
     }
-  };
+  }
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Olá! Gostaria de agendar uma consultoria gratuita.');
-    window.open(`https://wa.me/5511959766136?text=${message}`, '_blank');
-  };
+    const message = encodeURIComponent('Olá! Gostaria de agendar uma consultoria gratuita.')
+    window.open(`https://wa.me/5511959766136?text=${message}`, '_blank')
+  }
 
   return (
     <footer className="relative overflow-hidden bg-bg-deep-start">
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
         aria-hidden
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: ''
+          background: '',
         }}
       />
 
@@ -89,14 +89,12 @@ const Footer: React.FC = () => {
             >
               <div className="flex items-center space-x-3 mb-6">
                 <Image src={logo} alt="CarvaCode" className="h-10 w-auto" />
-                <span className="text-2xl font-bold text-primary-blue">
-                  CarvaCode
-                </span>
+                <span className="text-2xl font-bold text-primary-blue">CarvaCode</span>
               </div>
 
               <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
-                Equipe técnica enxuta que desenvolve sites, sistemas e apps sob
-                medida — do frontend ao deploy.
+                Equipe técnica enxuta que desenvolve sites, sistemas e apps sob medida, do frontend
+                ao deploy.
               </p>
 
               <Button
@@ -142,15 +140,18 @@ const Footer: React.FC = () => {
               <h3 className="text-white font-semibold mb-6">Contato</h3>
               <div className="space-y-3">
                 <p className="text-white/70">
-                  <span className="text-white font-medium">WhatsApp:</span><br />
+                  <span className="text-white font-medium">WhatsApp:</span>
+                  <br />
                   (11) 95976-6136
                 </p>
                 <p className="text-white/70">
-                  <span className="text-white font-medium">Email:</span><br />
+                  <span className="text-white font-medium">Email:</span>
+                  <br />
                   carvacodebr@gmail.com
                 </p>
                 <p className="text-white/70">
-                  <span className="text-white font-medium">Horário:</span><br />
+                  <span className="text-white font-medium">Horário:</span>
+                  <br />
                   Seg-Sex 9h às 18h
                 </p>
               </div>
@@ -199,7 +200,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
