@@ -173,6 +173,28 @@
   .text-primary-blue { color: var(--color-primary-blue); }
   .text-accent-coral { color: var(--color-accent-coral); }
 
+  .brand-wordmark {
+    color: #f4fbff;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.08em;
+    font-family: var(--font-brand), var(--font-inter), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-rendering: geometricPrecision;
+  }
+
+  .brand-wordmark-carva {
+    color: #f4fbff;
+    font-weight: 600;
+  }
+
+  .brand-wordmark-code {
+    color: var(--color-primary-blue);
+    font-weight: 800;
+  }
+
   /* Texto com gradiente (títulos de destaque) */
   .text-gradient-primary {
     background: linear-gradient(90deg, var(--color-primary-blue), var(--color-primary-blue-glow));

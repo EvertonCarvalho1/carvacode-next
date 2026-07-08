@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
   }
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Olá! Gostaria de agendar uma consultoria gratuita.')
+    const message = encodeURIComponent('Olá! Gostaria de marcar uma conversa inicial sobre meu projeto.')
     window.open(`https://wa.me/5511959766136?text=${message}`, '_blank')
   }
 
@@ -88,8 +88,11 @@ const Footer: React.FC = () => {
               className="lg:col-span-2"
             >
               <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-                <Image src={logo} alt="CarvaCode" className="h-10 w-auto" />
-                <span className="text-2xl font-bold text-primary-blue">CarvaCode</span>
+                <Image src={logo} alt="" aria-hidden="true" className="h-10 w-auto" />
+                <span className="brand-wordmark text-2xl" aria-label="CarvaCode">
+                  <span className="brand-wordmark-carva">Carva</span>
+                  <span className="brand-wordmark-code">Code</span>
+                </span>
               </div>
 
               <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">

@@ -23,7 +23,7 @@ const Services = () => {
     {
       icon: Globe,
       title: 'Sites e landing pages',
-      description: 'Sites institucionais e páginas de conversão rápidos, responsivos e prontos para o Google.',
+      description: 'Sites institucionais e páginas de conversão rápidos, responsivos e com boa estrutura básica de SEO.',
       features: ['Next.js', 'React', 'Tailwind', 'SEO'],
       color: 'from-primary-blue to-primary-blue-glow',
     },
@@ -38,7 +38,7 @@ const Services = () => {
       icon: Smartphone,
       title: 'Aplicações mobile',
       description: 'Apps para Android e iOS com uma base de código, integrados ao seu backend.',
-      features: ['React Native', 'iOS & Android', 'App responsivo'],
+      features: ['React Native', 'iOS & Android', 'Layout adaptável'],
       color: 'from-accent-coral to-warm-orange',
     },
     {
@@ -58,7 +58,7 @@ const Services = () => {
     {
       icon: Rocket,
       title: 'Deploy, manutenção e evolução',
-      description: 'Publicamos em VPS/nuvem, monitoramos e evoluímos o projeto ao longo do tempo.',
+      description: 'Publicamos em VPS/nuvem e podemos manter e evoluir o projeto ao longo do tempo.',
       features: ['Docker', 'Linux/VPS', 'CI/CD', 'Manutenção'],
       color: 'from-accent-coral to-primary-blue',
     },
@@ -84,7 +84,7 @@ const Services = () => {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="inline-block px-4 py-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full text-primary-blue text-sm font-medium mb-4"
             >
-              Nossos Serviços
+              Nossos serviços
             </motion.span>
             
             <motion.h2
@@ -93,8 +93,8 @@ const Services = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
-              <span className="text-foreground">Soluções </span>
-              <span className="text-gradient-primary">completas</span>
+              <span className="text-foreground">Desenvolvimento </span>
+              <span className="text-gradient-primary">completo</span>
               {' '}
               <br className="hidden md:block" />
               <span className="text-foreground">para seu </span>
@@ -171,7 +171,7 @@ const Services = () => {
 
               <p className="text-muted-foreground mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
                 Conte pra gente o que você precisa construir. Respondemos rápido,
-                sem compromisso e já com uma ideia dos próximos passos.
+                sem compromisso e com possíveis próximos passos.
               </p>
               
               <Button

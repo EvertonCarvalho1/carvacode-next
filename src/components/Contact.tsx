@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
               transition={{ delay: 0.08, duration: 0.45 }}
               className="inline-block px-4 py-2 bg-white/3 border border-white/6 rounded-full text-primary-blue text-sm font-medium mb-4"
             >
-              Vamos Conversar
+              Vamos conversar
             </motion.span>
 
             <motion.h2
@@ -277,7 +277,7 @@ const Contact: React.FC = () => {
                       ) : (
                         <>
                           <Send className="w-4 h-4 mr-2" />
-                          Enviar Mensagem
+                          Enviar mensagem
                         </>
                       )}
                     </Button>
@@ -355,7 +355,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-white font-medium">carvacodebr@gmail.com</p>
-                      <p className="text-white/60 text-sm">Resposta em até 24h</p>
+                      <p className="text-white/60 text-sm">Resposta em até 1 dia útil</p>
                     </div>
                   </div>
                 </div>

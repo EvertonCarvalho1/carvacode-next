@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   // Handlers
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      'Olá! Gostaria de agendar uma consultoria gratuita para meu projeto.'
+      'Olá! Gostaria de marcar uma conversa inicial sobre meu projeto.'
     );
     window.open(`https://wa.me/5511959766136?text=${message}`, '_blank');
   };

@@ -50,9 +50,10 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3 cursor-pointer"
           >
-            <Image src={logo} alt="CarvaCode" className="h-8 w-auto" />
-            <span className="text-xl font-bold text-primary-blue">
-              CarvaCode
+            <Image src={logo} alt="" aria-hidden="true" className="h-8 w-auto" />
+            <span className="brand-wordmark text-xl" aria-label="CarvaCode">
+              <span className="brand-wordmark-carva">Carva</span>
+              <span className="brand-wordmark-code">Code</span>
             </span>
           </motion.div>
 
@@ -78,7 +79,7 @@ const Header = () => {
               size="lg"
               onClick={() =>
                 window.open(
-                  'https://wa.me/5511959766136?text=Olá! Gostaria de agendar uma consultoria gratuita.',
+                  'https://wa.me/5511959766136?text=Olá! Gostaria de marcar uma conversa inicial sobre meu projeto.',
                   '_blank'
                 )
               }
@@ -142,7 +143,7 @@ const Header = () => {
               size="xl"
               onClick={() => {
                 window.open(
-                  'https://wa.me/5511959766136?text=Olá! Gostaria de agendar uma consultoria gratuita.',
+                  'https://wa.me/5511959766136?text=Olá! Gostaria de marcar uma conversa inicial sobre meu projeto.',
                   '_blank'
                 );
                 setIsMobileMenuOpen(false);

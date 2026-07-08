@@ -14,7 +14,7 @@ const About = () => {
     {
       title: 'Desenvolvimento ponta a ponta',
       description:
-        'Cuidamos de tudo: interface, API, banco de dados e deploy. Você não precisa juntar vários fornecedores.',
+        'Cuidamos da parte técnica: interface, API, banco de dados e deploy. Você não precisa juntar vários fornecedores para construir a base do produto.',
     },
     {
       title: 'Comunicação próxima',
@@ -76,9 +76,9 @@ const About = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              A CarvaCode nasce da experiência prática de desenvolvedores que trabalham diariamente
+              A CarvaCode reúne a experiência prática de desenvolvedores que trabalham diariamente
               com sistemas reais, aplicações web, mobile, APIs e infraestrutura. Somos uma equipe
-              enxuta, próxima do cliente e focada em entregar soluções bem construídas, bonitas e
+              enxuta, próxima do cliente e focada em entregar soluções bem construídas, claras e
               funcionais.
             </motion.p>
           </div>

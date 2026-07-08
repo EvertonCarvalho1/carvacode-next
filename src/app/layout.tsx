@@ -1,7 +1,7 @@
 import './globals.css';
 
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Manrope, Sora } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,10 +16,17 @@ const sora = Sora({
   weight: ["500", "600", "700", "800"],
 });
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-brand",
+  display: "swap",
+  weight: ["600", "700", "800"],
+});
+
 const siteUrl = "https://www.carvacodeweb.com";
-const title = "CarvaCode - Consultoria em Desenvolvimento Web & Apps";
+const title = "CarvaCode - Desenvolvimento de Sites, Sistemas e Apps";
 const description =
-  "Consultoria especializada em desenvolvimento web e aplicativos móveis. Transformamos ideias em produtos digitais escaláveis, com experiência técnica, entregas ágeis e suporte completo.";
+  "Desenvolvemos sites, sistemas web e aplicativos sob medida, com interface moderna, backend bem estruturado e base preparada para manutenção e evolução.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -54,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${sora.variable} ${manrope.variable}`}>
       <body>{children}</body>
     </html>
   );

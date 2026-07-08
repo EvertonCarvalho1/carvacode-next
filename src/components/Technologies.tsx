@@ -35,12 +35,12 @@ const Technologies: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full text-primary-blue text-sm font-medium mb-4">
-              Nossa Stack
+              Nossa stack
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               <span className="text-foreground">Tecnologias que </span>
-              <span className="text-gradient-primary">usamos de verdade</span>
+              <span className="text-gradient-primary">usamos no dia a dia</span>
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">

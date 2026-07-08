@@ -23,11 +23,20 @@ export default function Image() {
           style={{
             display: 'flex',
             fontSize: 96,
-            fontWeight: 700,
-            color: '#00a8e8',
+            fontWeight: 600,
+            color: '#f4fbff',
           }}
         >
-          CarvaCode
+          <span>Carva</span>
+          <span
+            style={{
+              marginLeft: 16,
+              color: '#00a8e8',
+              fontWeight: 800,
+            }}
+          >
+            Code
+          </span>
         </div>
         <div
           style={{
@@ -39,7 +48,7 @@ export default function Image() {
             maxWidth: 900,
           }}
         >
-          Consultoria em Desenvolvimento Web & Apps
+          Desenvolvimento de Sites, Sistemas e Apps
         </div>
       </div>
     ),
