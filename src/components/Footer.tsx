@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 relative z-20">
         {/* Main Footer Content */}
         <div className="py-16 border-b border-white/8">
-          <div className="grid lg:grid-cols-4 gap-12">
+          <div className="grid lg:grid-cols-4 gap-12 text-center lg:text-left">
             {/* Brand Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,12 +87,12 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <div className="flex items-center space-x-3 mb-6">
+              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
                 <Image src={logo} alt="CarvaCode" className="h-10 w-auto" />
                 <span className="text-2xl font-bold text-primary-blue">CarvaCode</span>
               </div>
 
-              <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
+              <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
                 Equipe técnica enxuta que desenvolve sites, sistemas e apps sob medida, do frontend
                 ao deploy.
               </p>
@@ -161,17 +161,17 @@ const Footer: React.FC = () => {
 
         {/* Bottom Footer */}
         <div className="py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             {/* Copyright */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="flex items-center gap-2 text-white/60 text-sm"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1 text-white/60 text-sm max-w-xs sm:max-w-none"
             >
               <span>© {currentYear} CarvaCode. Feito com</span>
-              <Heart className="w-4 h-4 text-accent-coral animate-pulse" />
+              <Heart className="w-4 h-4 text-accent-coral animate-pulse flex-shrink-0" />
               <span>para impulsionar seu negócio.</span>
             </motion.div>
 
