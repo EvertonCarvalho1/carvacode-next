@@ -134,6 +134,16 @@
     background: var(--gradient-hero);
   }
 
+  .hero-glow-primary {
+    animation: hero-glow-primary 18s ease-in-out infinite;
+    will-change: opacity, transform;
+  }
+
+  .hero-glow-accent {
+    animation: hero-glow-accent 22s ease-in-out infinite;
+    will-change: opacity, transform;
+  }
+
   .bg-grid-pattern {
     background-image:
       linear-gradient(0deg, #ffffff05 1px, transparent 1px),
@@ -301,4 +311,33 @@
     transform: scaleX(1);
   }
 
+}
+
+@keyframes hero-glow-primary {
+  0%, 100% {
+    opacity: 0.9;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(18px, -14px, 0) scale(1.04);
+  }
+}
+
+@keyframes hero-glow-accent {
+  0%, 100% {
+    opacity: 0.8;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate3d(-16px, 12px, 0) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow-primary,
+  .hero-glow-accent {
+    animation: none;
+  }
 }

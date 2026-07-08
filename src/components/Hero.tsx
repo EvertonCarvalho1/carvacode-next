@@ -37,12 +37,16 @@ const Hero: React.FC = () => {
       />
       <div
         aria-hidden
-        className="absolute left-1/2 top-1/2 z-0 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-blue/8 blur-3xl"
-      />
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2"
+      >
+        <div className="hero-glow-primary h-full w-full rounded-full bg-primary-blue/8 blur-3xl" />
+      </div>
       <div
         aria-hidden
-        className="absolute -right-28 bottom-12 z-0 h-80 w-80 rounded-full bg-accent-coral/8 blur-3xl"
-      />
+        className="pointer-events-none absolute -right-28 bottom-12 z-0 h-80 w-80"
+      >
+        <div className="hero-glow-accent h-full w-full rounded-full bg-accent-coral/8 blur-3xl" />
+      </div>
       <div
         aria-hidden
         className="absolute inset-x-0 bottom-0 z-0 h-32 bg-gradient-to-t from-bg-deep-start/70 to-transparent"

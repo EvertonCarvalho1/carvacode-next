@@ -5,6 +5,7 @@ import Services from "../components/Services";
 import Technologies from "../components/Technologies";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import BackToTop from "../components/BackToTop";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
