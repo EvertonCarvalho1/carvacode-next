@@ -15,7 +15,10 @@ export default function Contact() {
           eyebrow="Contato"
           title="Conte o que você precisa resolver"
         >
-          <p>Escreva do seu jeito, sem termos técnicos. Respondemos para combinar os próximos passos.</p>
+          <p>
+            Escreva do seu jeito, sem termos técnicos. Respondemos para entender melhor a
+            necessidade e combinar os próximos passos.
+          </p>
         </SectionHeading>
 
         <ContactPanel />

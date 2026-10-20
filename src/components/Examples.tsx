@@ -7,26 +7,34 @@ const EXAMPLES = [
   {
     icon: PackageSearch,
     title: 'Acompanhamento de pedidos',
-    situation: 'A equipe responde, um por um, em que etapa está cada pedido.',
-    solution: 'Área onde o cliente consulta o andamento, atualizada em um painel interno.',
+    situation:
+      'Clientes perguntam a todo momento em que etapa está o pedido, e a equipe responde um por um.',
+    solution:
+      'Uma área onde o cliente consulta o andamento, atualizada pela equipe em um painel interno.',
   },
   {
     icon: UserRound,
     title: 'Portal de clientes',
-    situation: 'Documentos e solicitações se perdem entre e-mail e WhatsApp.',
-    solution: 'Portal com acesso individual para documentos e solicitações.',
+    situation:
+      'Documentos e solicitações circulam por e-mail e WhatsApp, e fica difícil encontrar o histórico.',
+    solution:
+      'Um portal com acesso individual, onde cada cliente encontra seus documentos e abre solicitações.',
   },
   {
     icon: CalendarClock,
     title: 'Agendamentos',
-    situation: 'Horários marcados por mensagem, com risco de conflito.',
-    solution: 'Agenda online com regras de disponibilidade e confirmação.',
+    situation:
+      'Horários são marcados por telefone ou mensagem, com risco de conflito e de esquecimento.',
+    solution:
+      'Uma agenda online com regras de disponibilidade e confirmação, consultada pela equipe em um só lugar.',
   },
   {
     icon: PlugZap,
     title: 'Integração entre ferramentas',
-    situation: 'O mesmo dado é digitado na loja, na planilha e no financeiro.',
-    solution: 'Integração que leva os dados entre as ferramentas e registra o envio.',
+    situation:
+      'A mesma informação é digitada em duas ou três ferramentas, como loja virtual, planilha e sistema financeiro.',
+    solution:
+      'Uma integração que leva os dados de uma ferramenta para outra e registra o que foi enviado.',
   },
 ];
 
@@ -37,31 +45,31 @@ export default function Examples() {
         <SectionHeading
           id="exemplos-titulo"
           eyebrow="Exemplos de aplicação"
-          title="Situações em que um software sob medida ajuda"
+          title="Situações em que um software sob medida pode ajudar"
         >
-          <p>Exemplos ilustrativos do tipo de problema que resolvemos. Não são projetos de clientes.</p>
+          <p>
+            Os exemplos abaixo são ilustrativos: mostram o tipo de problema que podemos analisar
+            com você. Não representam projetos entregues nem clientes da CarvaCode.
+          </p>
         </SectionHeading>
 
-        <ul className="mt-8 grid gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-4">
+        <ul className="mt-10 grid gap-5 sm:mt-12 md:grid-cols-2 lg:gap-6">
           {EXAMPLES.map((example) => (
-            <li
-              key={example.title}
-              className="reveal rounded-2xl border border-line bg-white p-5 transition-[border-color,box-shadow,translate] duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/35 hover:shadow-[0_20px_40px_-24px_rgb(12_18_22/0.35)]"
-            >
-              <span className="flex size-10 items-center justify-center rounded-lg bg-surface-muted text-brand-blue-ink">
-                <example.icon aria-hidden="true" className="size-5" />
-              </span>
-              <h3 className="mt-4 font-semibold text-fg">{example.title}</h3>
-              <dl className="mt-3 space-y-3 text-[0.9375rem] leading-snug">
+            <li key={example.title} className="reveal rounded-2xl border border-line bg-white p-5 sm:p-8 transition-[border-color,box-shadow,translate] duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/35 hover:shadow-[0_20px_40px_-24px_rgb(12_18_22/0.35)]">
+              <div className="flex items-center gap-3">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-brand-blue-ink">
+                  <example.icon aria-hidden="true" className="size-5" />
+                </span>
+                <h3 className="text-lg font-semibold text-fg">{example.title}</h3>
+              </div>
+              <dl className="mt-5 space-y-4">
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-fg-muted">Situação</dt>
-                  <dd className="mt-1 text-fg">{example.situation}</dd>
+                  <dt className="text-sm font-semibold text-fg">Situação</dt>
+                  <dd className="mt-1 leading-relaxed text-fg-muted">{example.situation}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-brand-blue-ink">
-                    Possível solução
-                  </dt>
-                  <dd className="mt-1 text-fg">{example.solution}</dd>
+                  <dt className="text-sm font-semibold text-fg">Possível solução</dt>
+                  <dd className="mt-1 leading-relaxed text-fg-muted">{example.solution}</dd>
                 </div>
               </dl>
             </li>
