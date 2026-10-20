@@ -85,9 +85,20 @@ export default function PrivacyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2>Cookies e ferramentas de análise</h2>
+              <h2>Cookies e medição de audiência</h2>
               <p>
-                Este site não usa cookies de rastreamento nem ferramentas de análise de navegação.
+                Para saber quantas pessoas visitam o site e quantos contatos são iniciados, usamos o
+                Vercel Web Analytics, ferramenta da empresa que hospeda o site. Ela registra dados
+                agregados, como páginas visitadas, site de origem, país e tipo de dispositivo.
+                Segundo a Vercel, a ferramenta não usa cookies e não armazena dados que identifiquem
+                visitantes individualmente.
+              </p>
+              <p>
+                Também contamos os cliques nos botões de WhatsApp e os envios concluídos do
+                formulário. Essa contagem registra apenas o tipo de ação e o local do botão na
+                página: nome, e-mail, telefone e mensagem não são enviados para a medição.
+              </p>
+              <p>
                 Como qualquer site, a hospedagem pode registrar dados técnicos de acesso, como
                 endereço IP e navegador, para funcionamento e segurança.
               </p>

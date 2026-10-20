@@ -79,6 +79,21 @@ Com isso, um envio válido termina com a mensagem de indisponibilidade (503), se
 
 O teste de entrega real (chegada na caixa, `reply-to`, remetente autenticado) deve ser feito na hospedagem com autorização, conferindo também o painel de envios do Resend.
 
+## Medição (Vercel Web Analytics)
+
+O site usa `@vercel/analytics` (componente `<Analytics />` em `src/app/layout.tsx`). Ele só coleta dados no deploy da Vercel e depois de ativado no painel: projeto → **Analytics** → **Enable**.
+
+Eventos personalizados:
+
+| Evento | Quando | Propriedades |
+| --- | --- | --- |
+| `whatsapp_click` | Clique em qualquer link `https://wa.me/...` (registrado em `src/components/ConversionTracking.tsx`) | `local`: `cabecalho`, `menu`, `abertura`, `contato`, `contato-erro`, `rodape` |
+| `formulario_enviado` | Envio do formulário aceito pela rota (`src/components/ContactPanel.tsx`) | nenhuma |
+
+Para um novo botão de WhatsApp entrar na contagem com local próprio, adicione `data-track-local="nome-do-local"` ao link. Nenhum dado digitado no formulário é enviado à medição; mantenha assim e atualize a seção "Cookies e medição de audiência" de `/privacidade` se isso mudar.
+
+Visitas aparecem em qualquer plano; eventos personalizados dependem do plano da Vercel (consulte a página de preços). Sem o plano adequado, as chamadas de evento não causam erro, apenas não aparecem no painel.
+
 ## Dependências e segurança
 
 - Next.js fixado na linha 15 (`15.5.28`, último backport com correções de segurança). A migração para a versão 16 não foi feita.

@@ -58,7 +58,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                <a
+                  href={whatsappUrl()}
+                  data-track-local="rodape"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
                   Conversar pelo WhatsApp
                   <span className="sr-only"> (abre em nova aba)</span>
                 </a>

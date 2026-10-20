@@ -18,6 +18,7 @@ import {
   Phone,
   Send,
 } from 'lucide-react';
+import { track } from '@vercel/analytics';
 
 import { WhatsAppIcon } from './icons';
 import { Button, buttonVariants } from './ui/button';
@@ -189,6 +190,8 @@ export default function ContactPanel() {
       });
 
       if (response.ok) {
+        // Só o nome do evento: nenhum dado digitado no formulário é enviado à medição.
+        track('formulario_enviado');
         setValues(EMPTY_CONTACT);
         setStatus({ type: 'success', name: result.data.name.split(' ')[0] });
         return;
@@ -227,6 +230,7 @@ export default function ContactPanel() {
           </p>
           <a
             href={whatsappHref}
+            data-track-local="contato"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ size: 'lg' }), 'mt-5 w-full sm:w-auto')}
@@ -422,6 +426,7 @@ export default function ContactPanel() {
                   <p>{status.message}</p>
                   <a
                     href={whatsappHref}
+                    data-track-local="contato-erro"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-block font-semibold text-brand-blue-ink underline underline-offset-4"

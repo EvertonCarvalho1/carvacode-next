@@ -2,7 +2,9 @@ import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Inter, Manrope, Sora } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 
+import ConversionTracking from '@/components/ConversionTracking';
 import { siteConfig } from '@/config/site';
 
 const inter = Inter({
@@ -74,6 +76,9 @@ export default function RootLayout({
           Pular para o conteúdo
         </a>
         {children}
+        {/* Vercel Web Analytics: visitas agregadas, sem cookies. Precisa ser ativado no painel da Vercel. */}
+        <Analytics />
+        <ConversionTracking />
       </body>
     </html>
   );

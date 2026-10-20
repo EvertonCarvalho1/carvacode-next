@@ -126,6 +126,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <a
             href={whatsappUrl()}
+            data-track-local="cabecalho"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ size: 'sm' }), 'hidden sm:inline-flex')}
@@ -138,6 +139,7 @@ export default function Header() {
           {/* Atalho compacto para o WhatsApp em telas pequenas. */}
           <a
             href={whatsappUrl()}
+            data-track-local="cabecalho"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Conversar pelo WhatsApp (abre em nova aba)"
@@ -195,6 +197,7 @@ export default function Header() {
           </ul>
           <a
             href={whatsappUrl()}
+            data-track-local="menu"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ size: 'lg' }), 'mt-8 w-full')}

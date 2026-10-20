@@ -33,6 +33,7 @@ export default function Hero() {
             <div style={{ '--enter-delay': '240ms' } as CSSProperties} className="enter mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
               <a
                 href={whatsappUrl()}
+                data-track-local="abertura"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({ size: 'lg' })}
