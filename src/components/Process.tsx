@@ -3,27 +3,27 @@ import SectionHeading from './SectionHeading';
 const STEPS = [
   {
     title: 'Entendimento da necessidade',
-    text: 'Conversamos sobre o problema, quem vai usar e como o trabalho é feito hoje. Você não precisa chegar com termos técnicos.',
+    text: 'Conversamos sobre o problema e como o trabalho é feito hoje, sem termos técnicos.',
   },
   {
     title: 'Definição do escopo',
-    text: 'Organizamos o que entra na primeira versão, o que pode ficar para depois e quais integrações serão necessárias.',
+    text: 'Definimos o que entra na primeira versão e o que pode ficar para depois.',
   },
   {
     title: 'Proposta',
-    text: 'Apresentamos a proposta com escopo, etapas, prazo estimado e investimento para você avaliar.',
+    text: 'Você recebe escopo, etapas, prazo estimado e investimento para avaliar.',
   },
   {
     title: 'Desenvolvimento com validações',
-    text: 'Construímos em etapas e mostramos o andamento para você testar e pedir ajustes antes da publicação.',
+    text: 'Construímos em etapas para você acompanhar, validar as entregas e alinhar ajustes dentro do escopo combinado.',
   },
   {
     title: 'Publicação',
-    text: 'Colocamos o software no ar, configuramos o ambiente e conferimos o funcionamento com você.',
+    text: 'Colocamos o software no ar e conferimos o funcionamento com você.',
   },
   {
     title: 'Continuidade',
-    text: 'Depois da publicação, o projeto pode seguir com ajustes, manutenção e novas funcionalidades, conforme combinado.',
+    text: 'Manutenção e novas funcionalidades podem ser combinadas depois da publicação.',
   },
 ];
 
@@ -32,15 +32,12 @@ export default function Process() {
     <section id="como-trabalhamos" aria-labelledby="processo-titulo" className="section-y bg-surface">
       <div className="container-site">
         <SectionHeading id="processo-titulo" eyebrow="Como trabalhamos" title="Do primeiro contato ao software em uso">
-          <p>
-            Cada projeto passa pelas mesmas etapas. O ritmo e o tamanho de cada uma dependem do que
-            precisa ser construído.
-          </p>
+          <p>As mesmas etapas em todo projeto; o tamanho de cada uma depende do escopo.</p>
         </SectionHeading>
 
-        <ol className="mt-10 grid gap-x-6 gap-y-8 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-8 grid gap-x-6 gap-y-6 sm:mt-10 md:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((step, index) => (
-            <li key={step.title} className="reveal flex gap-4 border-t border-line pt-6">
+            <li key={step.title} className="reveal flex gap-4 border-t border-line pt-5">
               <span
                 aria-hidden="true"
                 className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink-950 font-display text-sm font-semibold text-white"
@@ -52,7 +49,7 @@ export default function Process() {
                   <span className="sr-only">Etapa {index + 1}: </span>
                   {step.title}
                 </h3>
-                <p className="mt-2 leading-relaxed text-fg-muted">{step.text}</p>
+                <p className="mt-1.5 leading-relaxed text-fg-muted">{step.text}</p>
               </div>
             </li>
           ))}

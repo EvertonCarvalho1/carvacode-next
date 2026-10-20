@@ -9,11 +9,6 @@ const QUESTIONS = [
       'Não. Basta contar o que você precisa resolver e como o trabalho acontece hoje. Transformar isso em requisitos técnicos faz parte do nosso trabalho.',
   },
   {
-    question: 'Vocês fazem apenas sites ou também sistemas e aplicativos?',
-    answer:
-      'Desenvolvemos sites, sistemas web, portais e aplicativos, além de APIs, integrações e automações. Muitas vezes essas partes fazem parte de um mesmo projeto.',
-  },
-  {
     question: 'Como é definido o valor do projeto?',
     answer:
       'O valor depende do escopo. Depois de entender a necessidade, definimos com você o que entra no projeto e enviamos uma proposta. No formulário, informar uma faixa de orçamento é opcional.',
@@ -31,12 +26,12 @@ const QUESTIONS = [
   {
     question: 'O que acontece depois da publicação?',
     answer:
-      'O projeto pode continuar com ajustes, manutenção e novas funcionalidades. A forma dessa continuidade é combinada com você.',
+      'Se fizer sentido, o projeto pode seguir com manutenção e novas funcionalidades, em condições combinadas com você.',
   },
   {
     question: 'Como é o primeiro contato?',
     answer:
-      'Você pode chamar no WhatsApp ou enviar o formulário desta página. Respondemos em horário comercial para entender melhor a necessidade e combinar os próximos passos.',
+      'Pelo WhatsApp ou pelo formulário desta página. Respondemos em horário comercial para entender a necessidade e combinar os próximos passos.',
   },
 ];
 

@@ -216,7 +216,7 @@ export default function ContactPanel() {
   };
 
   return (
-    <div className="mt-10 grid gap-8 sm:mt-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
+    <div className="mt-8 grid gap-8 sm:mt-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
       {/* No celular, o WhatsApp aparece antes do formulário. */}
       <div className="reveal space-y-8">
         <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
