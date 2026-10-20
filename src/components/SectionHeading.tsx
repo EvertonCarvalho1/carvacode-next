@@ -21,7 +21,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   const isDark = tone === 'dark';
   return (
-    <div className={cn('max-w-3xl', className)}>
+    <div className={cn('reveal max-w-3xl', className)}>
       <p className={isDark ? 'eyebrow-dark' : 'eyebrow'}>{eyebrow}</p>
       <h2
         id={id}

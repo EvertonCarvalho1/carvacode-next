@@ -55,7 +55,7 @@ export default function Examples() {
 
         <ul className="mt-10 grid gap-5 sm:mt-12 md:grid-cols-2 lg:gap-6">
           {EXAMPLES.map((example) => (
-            <li key={example.title} className="rounded-2xl border border-line bg-white p-5 sm:p-8">
+            <li key={example.title} className="reveal rounded-2xl border border-line bg-white p-5 sm:p-8 transition-[border-color,box-shadow,translate] duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/35 hover:shadow-[0_20px_40px_-24px_rgb(12_18_22/0.35)]">
               <div className="flex items-center gap-3">
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-brand-blue-ink">
                   <example.icon aria-hidden="true" className="size-5" />

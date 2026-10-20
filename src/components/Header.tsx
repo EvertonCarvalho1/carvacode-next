@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import BrandLogo from './BrandLogo';
@@ -102,7 +102,7 @@ export default function Header() {
         <a
           href="/#inicio"
           aria-label={`${siteConfig.name}, ir para o início`}
-          className="-m-1 rounded-lg p-1"
+          className="-m-1 rounded-lg p-1 transition-opacity hover:opacity-90"
           onClick={() => isMenuOpen && closeMenu(false)}
         >
           <BrandLogo />
@@ -114,7 +114,7 @@ export default function Header() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="rounded text-[0.9375rem] font-medium text-on-dark-muted transition-colors hover:text-white"
+                  className="relative rounded text-[0.9375rem] font-medium text-on-dark-muted transition-colors duration-200 after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-brand-blue after:transition-transform after:duration-300 hover:text-white hover:after:scale-x-100"
                 >
                   {item.label}
                 </a>
@@ -141,7 +141,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Conversar pelo WhatsApp (abre em nova aba)"
-            className="inline-flex size-11 items-center justify-center rounded-xl text-on-dark hover:bg-white/10 sm:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-xl text-on-dark transition-colors hover:bg-white/10 sm:hidden"
           >
             <WhatsAppIcon className="size-5" />
           </a>
@@ -149,12 +149,25 @@ export default function Header() {
           <button
             ref={toggleRef}
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-xl text-on-dark hover:bg-white/10 lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-xl text-on-dark transition-colors hover:bg-white/10 lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls={MENU_ID}
             onClick={() => setIsMenuOpen((open) => !open)}
           >
-            {isMenuOpen ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
+            <span aria-hidden="true" className="relative size-6">
+              <Menu
+                className={cn(
+                  'absolute inset-0 size-6 transition-[opacity,rotate] duration-200',
+                  isMenuOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100',
+                )}
+              />
+              <X
+                className={cn(
+                  'absolute inset-0 size-6 transition-[opacity,rotate] duration-200',
+                  isMenuOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0',
+                )}
+              />
+            </span>
             <span className="sr-only">{isMenuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
           </button>
         </div>
@@ -163,16 +176,16 @@ export default function Header() {
       <div
         ref={panelRef}
         id={MENU_ID}
-        hidden={!isMenuOpen}
-        className="h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-white/10 bg-ink-950 lg:hidden"
+        data-open={isMenuOpen}
+        className="menu-panel absolute inset-x-0 top-full h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-white/10 bg-ink-950 lg:hidden"
       >
         <nav aria-label="Principal (celular)" className="container-site py-6">
           <ul className="divide-y divide-white/10">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
+            {NAV_ITEMS.map((item, index) => (
+              <li key={item.href} style={{ '--i': index } as CSSProperties}>
                 <a
                   href={item.href}
-                  className="flex min-h-14 items-center text-lg font-semibold text-on-dark hover:text-brand-blue-light"
+                  className="flex min-h-14 items-center text-lg font-semibold text-on-dark transition-colors hover:text-brand-blue-light"
                   onClick={() => closeMenu(false)}
                 >
                   {item.label}

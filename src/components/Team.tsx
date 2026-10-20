@@ -46,7 +46,10 @@ export default function Team() {
 
           <ul className="space-y-4 lg:pt-10">
             {PRINCIPLES.map((principle) => (
-              <li key={principle.title} className="flex gap-4 rounded-2xl border border-line bg-white p-5 sm:p-6">
+              <li
+                key={principle.title}
+                className="reveal flex gap-4 rounded-2xl border border-line bg-white p-5 transition-[border-color,box-shadow,translate] duration-300 ease-out hover:-translate-y-0.5 hover:border-brand-blue/35 hover:shadow-[0_16px_32px_-22px_rgb(12_18_22/0.35)] sm:p-6"
+              >
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue-ink">
                   <principle.icon aria-hidden="true" className="size-5" />
                 </span>
@@ -59,11 +62,10 @@ export default function Team() {
           </ul>
         </div>
 
-        <div
+        <section
           id="tecnologias"
-          className="mt-12 rounded-2xl border border-line bg-white p-6 sm:mt-16 sm:p-8"
           aria-labelledby="tecnologias-titulo"
-          role="region"
+          className="reveal mt-12 rounded-2xl border border-line bg-white p-6 sm:mt-16 sm:p-8"
         >
           <h3 id="tecnologias-titulo" className="text-lg font-semibold text-fg">
             Tecnologias que usamos com frequência
@@ -71,16 +73,20 @@ export default function Team() {
           <p className="mt-1 text-[0.9375rem] text-fg-muted">
             Ferramentas consolidadas, escolhidas conforme a necessidade de cada projeto.
           </p>
-          <dl className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Uma linha por grupo: rótulo à esquerda e tecnologias alinhadas à direita. */}
+          <dl className="mt-6 divide-y divide-line border-t border-line">
             {TECH_GROUPS.map((group) => (
-              <div key={group.label} className="min-w-0">
+              <div
+                key={group.label}
+                className="grid gap-2 py-4 sm:grid-cols-[12rem_minmax(0,1fr)] sm:items-center sm:gap-6"
+              >
                 <dt className="text-sm font-semibold text-fg">{group.label}</dt>
-                <dd className="mt-2">
+                <dd>
                   <ul className="flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-md border border-line bg-surface-muted px-2.5 py-1 text-sm text-fg"
+                        className="rounded-md border border-line bg-surface-muted px-2.5 py-1 text-sm text-fg transition-colors duration-200 hover:border-brand-blue/40"
                       >
                         {item}
                       </li>
@@ -90,7 +96,7 @@ export default function Team() {
               </div>
             ))}
           </dl>
-        </div>
+        </section>
       </div>
     </section>
   );

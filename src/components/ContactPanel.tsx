@@ -218,7 +218,7 @@ export default function ContactPanel() {
   return (
     <div className="mt-10 grid gap-8 sm:mt-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
       {/* No celular, o WhatsApp aparece antes do formulário. */}
-      <div className="space-y-8">
+      <div className="reveal space-y-8">
         <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
           <h3 className="text-xl font-semibold text-white">Prefere conversar agora?</h3>
           <p className="mt-2 leading-relaxed text-on-dark-muted">
@@ -269,7 +269,7 @@ export default function ContactPanel() {
         </div>
       </div>
 
-      <div className="surface-light rounded-2xl bg-white p-5 text-fg shadow-xl shadow-black/20 sm:p-8">
+      <div className="reveal surface-light rounded-2xl bg-white p-5 text-fg shadow-xl shadow-black/20 sm:p-8">
         <h3 id="formulario-titulo" className="text-xl font-semibold">
           Envie uma mensagem
         </h3>
@@ -416,7 +416,7 @@ export default function ContactPanel() {
 
           <div role="alert" className="empty:hidden">
             {status.type === 'error' && (
-              <div className="flex gap-3 rounded-xl border border-danger/30 bg-danger/5 p-4 text-[0.9375rem] text-fg">
+              <div className="appear flex gap-3 rounded-xl border border-danger/30 bg-danger/5 p-4 text-[0.9375rem] text-fg">
                 <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-danger" />
                 <div>
                   <p>{status.message}</p>
@@ -440,7 +440,7 @@ export default function ContactPanel() {
               <div
                 ref={successRef}
                 tabIndex={-1}
-                className="flex gap-3 rounded-xl border border-success/30 bg-success/5 p-4 text-[0.9375rem] text-fg"
+                className="appear flex gap-3 rounded-xl border border-success/30 bg-success/5 p-4 text-[0.9375rem] text-fg"
               >
                 <CircleCheck aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-success" />
                 <p>

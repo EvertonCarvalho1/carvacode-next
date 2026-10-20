@@ -21,9 +21,9 @@ export default function Solutions() {
             <li
               key={solution.id}
               id={solution.id}
-              className="flex flex-col rounded-2xl border border-line bg-white p-5 sm:p-8"
+              className="reveal group flex flex-col rounded-2xl border border-line bg-white p-5 sm:p-8 transition-[border-color,box-shadow,translate] duration-300 ease-out hover:-translate-y-1 hover:border-brand-blue/35 hover:shadow-[0_20px_40px_-24px_rgb(12_18_22/0.35)]"
             >
-              <span className="flex size-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue-ink">
+              <span className="flex size-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue-ink transition-colors duration-300 group-hover:bg-brand-blue/15">
                 <solution.icon aria-hidden="true" className="size-6" />
               </span>
               <h3 className="mt-5 text-xl font-semibold text-fg">{solution.title}</h3>
@@ -42,12 +42,12 @@ export default function Solutions() {
                 <div className="border-t border-line pt-5">
                   <InterestLink
                     interest={solution.interest}
-                    className="group inline-flex items-center gap-2 rounded font-semibold text-brand-blue-ink hover:underline hover:underline-offset-4"
+                    className="group/link inline-flex items-center gap-2 rounded font-semibold text-brand-blue-ink underline-offset-4 hover:underline"
                   >
                     {solution.cta}
                     <ArrowRight
                       aria-hidden="true"
-                      className="size-4 transition-transform group-hover:translate-x-0.5"
+                      className="size-4 transition-[translate] duration-200 group-hover/link:translate-x-1"
                     />
                   </InterestLink>
                 </div>

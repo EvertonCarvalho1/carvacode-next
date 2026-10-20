@@ -102,6 +102,108 @@
     --focus-ring: var(--color-brand-blue-ink);
     color-scheme: light;
   }
+
+  /* O Tailwind 4 deixa botões com cursor padrão; aqui todo controle clicável mostra a mão. */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  summary,
+  select:not(:disabled),
+  label[for] {
+    cursor: pointer;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Movimento
+   Tudo é decorativo: sem animação, o conteúdo aparece igual. Só roda quando
+   a pessoa não pediu movimento reduzido no sistema.
+   ------------------------------------------------------------------------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrada da abertura ao carregar a página (CSS puro, não depende de JavaScript). */
+  .enter {
+    animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--enter-delay, 0ms);
+  }
+
+  /* Revelação suave ao rolar, ligada à posição na tela.
+     Navegadores sem suporte simplesmente mostram o conteúdo. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+
+  /* Mensagens de status do formulário. */
+  .appear {
+    animation: fade-in 0.3s ease-out both;
+  }
+
+  /* Perguntas frequentes abrindo com altura animada (Chrome/Edge recentes). */
+  @supports selector(::details-content) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      height: 0;
+      overflow: clip;
+      transition:
+        height 0.3s ease,
+        content-visibility 0.3s allow-discrete;
+    }
+
+    details[open]::details-content {
+      height: auto;
+    }
+  }
+}
+
+/* Painel do menu móvel: desliza e esmaece. `visibility` tira os links da
+   tabulação quando fechado e só muda depois que a transição termina. */
+.menu-panel {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  visibility: hidden;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0s linear 0.22s;
+}
+
+.menu-panel[data-open='true'] {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-panel[data-open='true'] li {
+    animation: fade-up 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 45ms + 40ms);
+  }
 }
 
 /* Movimento reduzido: desliga transições, animações e rolagem suave. */

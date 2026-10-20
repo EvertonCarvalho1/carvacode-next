@@ -40,7 +40,7 @@ export default function Process() {
 
         <ol className="mt-10 grid gap-x-6 gap-y-8 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((step, index) => (
-            <li key={step.title} className="flex gap-4 border-t border-line pt-6">
+            <li key={step.title} className="reveal flex gap-4 border-t border-line pt-6">
               <span
                 aria-hidden="true"
                 className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink-950 font-display text-sm font-semibold text-white"
