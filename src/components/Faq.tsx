@@ -9,11 +9,6 @@ const QUESTIONS = [
       'Não. Basta contar o que você precisa resolver e como o trabalho acontece hoje. Transformar isso em requisitos técnicos faz parte do nosso trabalho.',
   },
   {
-    question: 'Vocês fazem apenas sites ou também sistemas e aplicativos?',
-    answer:
-      'Desenvolvemos sites, sistemas web, portais e aplicativos, além de APIs, integrações e automações. Muitas vezes essas partes fazem parte de um mesmo projeto.',
-  },
-  {
     question: 'Como é definido o valor do projeto?',
     answer:
       'O valor depende do escopo. Depois de entender a necessidade, definimos com você o que entra no projeto e enviamos uma proposta. No formulário, informar uma faixa de orçamento é opcional.',
